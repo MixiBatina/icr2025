@@ -1,0 +1,29 @@
+<h2>Products</h2>
+<div class="mb-3">
+    <input type="text" class="form-control" placeholder="Search products..." ng-model="vm.search" />
+</div>
+<div class="d-flex justify-content-end mb-2">
+    <button class="btn btn-sm btn-outline-secondary mr-1" ng-click="vm.changeSort('name')">
+        Name <span ng-if="vm.sortKey==='name'">
+            <i ng-class="vm.reverse ? 'fa fa-sort-down' : 'fa fa-sort-up'"></i>
+        </span>
+    </button>
+    <button class="btn btn-sm btn-outline-secondary" ng-click="vm.changeSort('price')">
+        Price <span ng-if="vm.sortKey==='price'">
+            <i ng-class="vm.reverse ? 'fa fa-sort-down' : 'fa fa-sort-up'"></i>
+        </span>
+    </button>
+</div>
+<div class="row">
+    <div class="col-sm-6 col-md-4 col-lg-3 mb-4" ng-repeat="p in vm.products | filter:vm.search | orderBy:vm.sortkey:vm.reverse">
+        <div class="card h-100">
+            <img ng-src="{{p.img}}" class="card-img-top img-fluid" alt="{{p.name}}">
+            <div class="card-body">
+                <h5 class="card-title">{{p.name}}</h5>
+                <p class="card-text">{{p.desc}}</p>
+                <p><strong>\${{p.price}}</strong></p>
+                <a ui-sref="product({id: p.id})" class="btn btn-outline-primary btn-sm">View</a>
+            </div>
+        </div>
+    </div>
+</div>

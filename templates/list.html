@@ -1,0 +1,11 @@
+<h2>Item List</h2>
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat="item in vm.items">
+ //   {{item.id}} - {{item.name}} 
+      <button
+        class="btn bt-sm btn-info"
+        ui-sref="detail({ id: item.id })">
+        Details
+      </button>
+    </li>
+</ul>

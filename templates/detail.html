@@ -1,0 +1,27 @@
+<div class="card">
+    <div>
+        Details for {{vm.item.name}}
+    </div>
+    <div class="card=body">
+        <p><strong>ID:</strong> {{vm.item.id}}</p>
+       
+        <form name="detailForm" ng-submit="vm.save(detailForm)" novalidate>
+           
+            <div class="form-group">
+                <label>Name</label>
+                <input class="form-control" ng-model="vm.item.name" required>
+            </div>
+        
+            <button class="btn btn-primary" type="submit" ng-disabled="detailForm.$invalid">
+                Save
+            </button>
+            <button class="btn btn-danger" type="button" ng-click="vm.remove()">
+                Delete
+            </button>
+            <a ui-sref="list" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+    <div class="card-footer">
+        <a ui-sref="list" class="btn btn-secondary btn-sm">Back to List</a>
+    </div>
+</div>

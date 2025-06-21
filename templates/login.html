@@ -1,0 +1,30 @@
+<form name="loginForm" ng-submit="vm.login()" novalidate class="w-50 mx-auto mt-5">
+  <h3 class="mb-4">Login</h3>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input 
+      type="email" 
+      id="email" 
+      class="form-control" 
+      ng-model="vm.user.email" 
+      required />
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input 
+      type="password" 
+      id="password" 
+      class="form-control" 
+      ng-model="vm.user.password" 
+      required />
+  </div>
+
+  <div class="text-danger mb-2" ng-if="vm.error">
+    {{ vm.error }}
+  </div>
+
+  <button type="submit" class="btn btn-primary">Login</button>
+  <a ui-sref="register" class="btn btn-link">Register</a>
+</form>

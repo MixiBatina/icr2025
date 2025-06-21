@@ -1,0 +1,67 @@
+<form name="regForm" ng-submit="vm.register()" novalidate class="w-50 mx-auto mt-5">
+  <h3 class="mb-4">Register</h3>
+
+  <div class="form-group">
+    <label for="fullName">Full Name</label>
+    <input 
+      type="text" 
+      id="fullName" 
+      class="form-control" 
+      ng-model="vm.user.fullName" 
+      required />
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input 
+      type="email" 
+      id="email" 
+      class="form-control" 
+      ng-model="vm.user.email" 
+      required />
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input 
+      type="password" 
+      id="password" 
+      class="form-control" 
+      ng-model="vm.user.password" 
+      required />
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Phone</label>
+    <input 
+      type="tel" 
+      id="phone" 
+      class="form-control" 
+      ng-model="vm.user.phone" />
+  </div>
+
+  <div class="form-group">
+    <label for="address">Address</label>
+    <input 
+      type="text" 
+      id="address" 
+      class="form-control" 
+      ng-model="vm.user.address" />
+  </div>
+
+  <div class="form-group">
+    <label for="favorites">Favorite Product Type</label>
+    <input 
+      type="text" 
+      id="favorites" 
+      class="form-control" 
+      ng-model="vm.user.favorites" />
+  </div>
+
+  <div class="text-danger mb-2" ng-if="vm.error">
+    {{ vm.error }}
+  </div>
+
+  <button type="submit" class="btn btn-primary">Register</button>
+  <a ui-sref="login" class="btn btn-link">Back to Login</a>
+</form>
